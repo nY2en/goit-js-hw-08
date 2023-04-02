@@ -19,6 +19,14 @@ function onInputChange(e) {
 function onSubmitClick(e) {
   e.preventDefault();
 
+  const emailValue = inputRef.value;
+  const pswValue = textareaRef.value;
+
+  if (emailValue === '' || pswValue === '') {
+    console.log(alert('All fileds must be filled'));
+    return;
+  }
+
   console.log(localStorage.getItem(STORAGE_KEY));
 
   localStorage.removeItem(STORAGE_KEY);
